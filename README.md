@@ -5,3 +5,4 @@ moving forward this will be a standalone package
 
 ## TODO
 - Add test for the interface
+- build automation on either local or action
