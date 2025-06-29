@@ -16,7 +16,7 @@ jobs:
         os: ['ubuntu-22.04-arm', 'ubuntu-22.04', 'macos-latest', 'windows-latest']
         experimental: [false]
         # exclude:
-        # excludes python-versions not available in specific OSs. Usually needed when new versions are released.
+        # excludes  python-versions not available in specific OSs. Usually needed when new versions are released.
         # - os: linux-arm64
         #   python-version: '3.13'
 
