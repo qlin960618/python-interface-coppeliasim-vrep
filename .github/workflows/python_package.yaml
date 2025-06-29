@@ -62,8 +62,8 @@ jobs:
       - name: Testing
         run: |
           cd .github/scripts/
-          chmod +x basic_eval.sh
-          ./basic_eval.sh
+          chmod +x basic_test.sh
+          ./basic_test.sh
       - name: Remove build folder for (not Windows)
         if: matrix.os != 'windows-latest'
         run: |
