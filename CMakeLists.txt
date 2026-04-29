@@ -4,7 +4,7 @@ if(WIN32)
     set(CMAKE_TOOLCHAIN_FILE C:/vcpkg/scripts/buildsystems/vcpkg.cmake)
 endif()
 
-project(dqrobotics_python_interface_coppeliasim_zmq)
+project(dqrobotics_python_interface_coppeliasim_vrep)
 
 find_package(Eigen3 REQUIRED)
 
