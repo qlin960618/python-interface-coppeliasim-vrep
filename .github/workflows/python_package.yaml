@@ -48,7 +48,7 @@ jobs:
           .\bootstrap-vcpkg.bat
           vcpkg integrate install
           echo "Installing dependencies..."
-          .\vcpkg install eigen3:x64-windows cppzmq boost
+          .\vcpkg install eigen3:x64-windows
           echo "Adding symlink to vcpkg..."
           cmd /c mklink /d c:\Tools\vcpkg c:\vcpkg
           cd ~
