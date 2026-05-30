@@ -2,7 +2,7 @@ name: Update Submodules
 
 on:
   schedule:
-    - cron: '0 3 * * *'
+    - cron: '0 3 */5 * *'
   workflow_dispatch:
 
 permissions:
@@ -30,19 +30,19 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Update submodules from tracking branches
+      - name: Update Python submodule from tracking branch
         id: update
         run: |
           git submodule sync --recursive
-          git submodule update --init --recursive
-          git submodule update --remote --recursive
+          git submodule update --init --recursive submodules/dqrobotics/python
+          git submodule update --remote submodules/dqrobotics/python
 
-          if git diff --quiet --submodule=short -- .gitmodules submodules; then
+          if git diff --quiet --submodule=short -- submodules/dqrobotics/python; then
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
-            echo "No submodule updates found."
+            echo "No Python submodule update found."
           else
             echo "has_changes=true" >> "$GITHUB_OUTPUT"
-            git diff --submodule=short -- .gitmodules submodules
+            git diff --submodule=short -- submodules/dqrobotics/python
           fi
 
       - name: Set up Python
@@ -74,6 +74,6 @@ jobs:
       - name: Commit and push submodule updates
         if: steps.update.outputs.has_changes == 'true'
         run: |
-          git add .gitmodules submodules
-          git commit -m "Update submodules to latest tracked commits"
+          git add submodules/dqrobotics/python
+          git commit -m "Update dqrobotics Python submodule"
           git push
