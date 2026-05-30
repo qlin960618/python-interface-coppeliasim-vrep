@@ -23,7 +23,6 @@ jobs:
         with:
           ref: ${{ github.ref_name }}
           fetch-depth: 0
-          submodules: recursive
 
       - name: Configure git
         run: |
@@ -33,9 +32,14 @@ jobs:
       - name: Update Python submodule from tracking branch
         id: update
         run: |
-          git submodule sync --recursive
-          git submodule update --init --recursive submodules/dqrobotics/python
+          git submodule sync
+          # cpp-interface-vrep is archived; initialize it only as a fixed build dependency.
+          git submodule update --init submodules/dqrobotics/python submodules/dqrobotics/cpp-interface-vrep
           git submodule update --remote submodules/dqrobotics/python
+          git -C submodules/dqrobotics/python submodule sync --recursive
+          git -C submodules/dqrobotics/python submodule update --init --recursive cpp pybind11 interfaces/cpp-interface-json11
+          git -C submodules/dqrobotics/cpp-interface-vrep submodule sync --recursive
+          git -C submodules/dqrobotics/cpp-interface-vrep submodule update --init --recursive coppeliarobotics/include coppeliarobotics/remoteApi
 
           if git diff --quiet --submodule=short -- submodules/dqrobotics/python; then
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
