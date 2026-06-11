@@ -19,7 +19,7 @@ This file is part of DQ Robotics.
 Contributors:
 - Murilo M. Marinho (murilomarinho@ieee.org)
 
-- Quentin Lin (qlin1806@g.ecc.u-tokyo.ac.jp)
+- Quentin Huang (qlin1806@g.ecc.u-tokyo.ac.jp)
  - porting og vrep to standalone module
 */
 #pragma once

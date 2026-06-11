@@ -20,7 +20,7 @@
 #
 #   Contributors:
 #   - Murilo M. Marinho, email: murilo@g.u-tokyo.ac.jp
-#   - Quentin Lin, email: qlin1806@g.ecc.u-tokyo.ac.jp
+#   - Quentin Huang, email: qlin1806@g.ecc.u-tokyo.ac.jp
 #
 # ################################################################
 """

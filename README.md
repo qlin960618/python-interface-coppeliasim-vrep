@@ -12,7 +12,7 @@ The bindings were split out from the main DQ Robotics Python package and are int
 ## Maintainers
 
 - Original DQ Robotics interface: DQ Robotics Developers
-- Standalone package port: Quentin Lin
+- Standalone package port: Quentin Huang
 
 ## Installation
 
