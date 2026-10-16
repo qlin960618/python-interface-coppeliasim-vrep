@@ -4,3 +4,4 @@
 [submodule "submodules/dqrobotics/python"]
 	path = submodules/dqrobotics/python
 	url = https://github.com/dqrobotics/python.git
+	branch = master
